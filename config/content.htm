@@ -1,4 +1,5 @@
 <h1>About</h1>
+<p><a href="https://nfuedu-my.sharepoint.com/:u:/g/personal/yen_nfu_edu_tw/EbxsXK5kkU1ImhJ_HcYPnTcB9MboGQcfs6FuojXRPlhInA?e=wzLQFt">basic_portable_python.7z</a> (下載 15MB, 解開後 55MB)</p>
 <p>ssh to server</p>
 <p>git clone --recurse-submodules <a href="mailto:git@your_ssh_session_name:github_account/cp.git">git@your_ssh_session_name:github_account/cp.git</a></p>
 <p>check firewall status</p>
@@ -11,20 +12,22 @@
 <hr/>
 <p>建立帳號</p>
 <p style="padding-left: 30px;">考試帳號:</p>
-<p style="padding-left: 60px;">exam.cycu.org (線上考試帳號, 帳號為學號, 自選密碼, 請將密碼存入手機備忘錄)</p>
+<p style="padding-left: 60px;"><a href="https://exam.cycu.org">https://exam.cycu.org</a>  (線上考試帳號, 帳號為學號, 自選密碼, 請將密碼存入手機備忘錄)</p>
 <p style="padding-left: 30px;">OneDrive 帳號:</p>
 <p style="padding-left: 60px;">先從 <a href="https://mail.nfu.edu.tw">https://mail.nfu.edu.tw</a> 以學號登入 (收取帳號申請確認信).</p>
 <p style="padding-left: 60px;">請各學員至 <a href="https://www.microsoft.com/zh-tw/education/products/office">https://www.microsoft.com/zh-tw/education/products/office</a>, 以 @nfu 帳號申請 OneDrive 帳號.</p>
 <p style="padding-left: 60px;">計算機程式 MS Teams 代碼: plmm43c</p>
+<p style="padding-left: 60px;">Given a <a href="https://github.com/mdecycu/cmsite">https://github.com/mdecycu/cmsite</a> based Github Classroom repository</p>
+<p style="padding-left: 90px;">localhost 維護倉儲網站內容</p>
+<p style="padding-left: 90px;">s1511.cycu.org 上維護倉儲網站內容</p>
+<p style="padding-left: 90px;">Replit 平台上以 Import from Github 倉儲內容後, 利用動態編輯器改版網頁內容</p>
 <p style="padding-left: 30px;">Github 帳號:</p>
 <p style="padding-left: 60px;">在 <a href="https://github.com/join">https://github.com/join</a> 建立帳號 (以姓名英文縮寫加上學號作為帳號, 例如: pjc41033101)</p>
-<p style="padding-left: 30px;">Replit 帳號:</p>
+<p style="padding-left: 30px;">登入 Replit:</p>
 <p style="padding-left: 60px;">利用 Github 帳號登入 <a href="https://replit.com/">https://replit.com/</a></p>
-<p style="padding-left: 60px;">登入後, 建立空白 repl, 以 git clone --recurse-submodules 取下網頁倉儲</p>
-<p style="padding-left: 60px;">pip install flask flask_cors bs4 lxml pelican markdown gevent</p>
-<p style="padding-left: 60px;">在倉儲根目錄建立 <a href="https://mde.tw/downloads/main.py">main.py</a> 與 <a href="https://mde.tw/downloads/nocache.py">nocache.py</a></p>
-<p style="padding-left: 30px;">Ubuntu server 帳號:</p>
-<p style="padding-left: 60px;"><a href="https://s1511.cycu.org">https://s1511.cycu.org</a></p>
+<p style="padding-left: 60px;">以 Import from Github 導入要在 Replit 維護的倉儲</p>
+<p style="padding-left: 30px;">登入 Ubuntu server:</p>
+<p style="padding-left: 60px;"><a href="https://s1511.cycu.org">https://s1511.cycu.org</a> (demo for pj2022)</p>
 <p>Python:</p>
 <p style="padding-left: 30px;">近端基本的 Python 可攜程式套件:</p>
 <p style="padding-left: 60px;">用於自行建立可攜程式套件 (利用舊版 Python 建立新版的 Python 可攜程式套件)</p>
@@ -71,7 +74,194 @@ for i in py_list:
 <p>取得 get-pip.py 後, 以可攜 Python.exe 執行後, 就能在可攜套件中配置 pip.exe</p>
 <p>Javascript:</p>
 <p style="padding-left: 30px;"><a href="https://learnjavascript.online/">https://learnjavascript.online/</a> (Use the first free 7 chapters)</p>
-<p style="padding-left: 30px;"><a href="https://www.freecodecamp.org/news/23-free-websites-to-learn-javascript/">https://www.freecodecamp.org/news/23-free-websites-to-learn-javascript/</a></p><h1>Brython</h1>
+<p style="padding-left: 30px;"><a href="https://www.freecodecamp.org/news/23-free-websites-to-learn-javascript/">https://www.freecodecamp.org/news/23-free-websites-to-learn-javascript/</a></p><h1>Networks</h1>
+<p>網路設定</p>
+<p>機械設計系的網路配置</p>
+<p>電腦輔助設計室的網路配置</p>
+<p>手機使用無線網路上網</p>
+<p>筆電使用無線網路上網</p>
+<h1>Servers</h1>
+<p><a href="http://wcm.cycu.org:88/github/wcm2023/content/Servers.html">http://wcm.cycu.org:88/github/wcm2023/content/Servers.html</a></p>
+<p>s1511 必須在 /etc/default/stunnel4 中加入 ENABLED=1</p>
+<p>sudo /etc/init.d/stunnel4 restart 可重新啟動 stunnel</p>
+<p>建立 stunnel.conf</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># 想要透過程式方法, 建立 stunnel.conf 設定檔案, 其中分別從 9001 到 9300, 8001 到 8300
+first = '''
+[https]
+accept = cad2.cycu.org:
+'''
+second = '''
+connect = 127.0.0.1:
+'''
+third = '''cert = /etc/letsencrypt/live/cad2.cycu.org/fullchain.pem
+key = /etc/letsencrypt/live/cad2.cycu.org/privkey.pem
+TIMEOUTclose = 0
+'''
+list8 =[str(i) for i  in range(8001, 8301)]
+list9=[str(i) for i  in range(9001, 9301)]
+ 
+setup = ""
+for i in zip(list8, list9):
+    #print(i)
+    print(i[0], i[1])
+    setup += first.strip() + i[0] + "\n" + second.strip() + i[1] + "\n" + third
+ 
+with open("stunnel.conf", "w") as f:
+    f.write(setup)</pre>
+<p>假如要以自己架設的伺服器來取代 Replit, 第一步是如何在 Ubuntu 22.04 Server 上建立每位學員的帳號. 使用 <a href="https://manpages.ubuntu.com/manpages/xenial/man8/newusers.8.html">newusers</a> 指令, 配合建立一個包含帳號、密碼、uid、gid、comment、home dir 以及 shell (/bin/bash) 資料的 users.txt, 然後使用 sudo newusers users.txt 就可以完成所有學員帳號的建立. 但必須要先取得初始 uid, 也就是列出現有帳號的所屬 uid, 然後才能設定後續代號的 user id.</p>
+<p>列出現有帳號 uid 的指令為: cut -d: -f1,3 /etc/passwd</p>
+<p>表示要從 /etc/passwd 檔案, 以 : 符號分割檔案, 然後只取出第一與第三欄位的資料. 假如傳回:</p>
+<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">root:0
+daemon:1
+bin:2
+sys:3
+sync:4
+games:5
+man:6
+lp:7
+mail:8
+news:9
+uucp:10
+proxy:13
+www-data:33
+backup:34
+list:38
+irc:39
+gnats:41
+nobody:65534
+_apt:100
+systemd-network:101
+systemd-resolve:102
+messagebus:103
+systemd-timesync:104
+pollinate:105
+sshd:106
+syslog:107
+uuidd:108
+tcpdump:109
+tss:110
+landscape:111
+usbmux:112
+tcexam:1000
+lxd:999
+postgres:113
+tcexamdb:1001
+cad2022:1002
+stunnel4:998
+cd1:1002
+cd3:1003</pre>
+<p>表示新建帳號的 uid 與 gid 就可以從 1004 開始, 然後連續增量後配給新的用戶.</p>
+<p>建立各課程對應的 Ubuntu 帳號與密碼檔案:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># 導入亂數模組
+import random
+# 導入字串模組
+import string
+# 利用 def 關鍵字定義函式
+# 函式的輸入變數可以設定初始值
+def password_generator(size=4, chars=string.ascii_lowercase + string.digits):
+    # 函式內以多行註解說明函式功能
+    """Generate random password
+    """
+    # 利用 return 關鍵字將所產生的亂數字串傳回
+    return ''.join(random.choice(chars) for _ in range(size))
+# 建立一個變數與隨後的字串對應
+pass_string = "abcdefghkmnpqrstuwxyz123456789"
+cp_num = ["0747", "0761"]
+cad_num = ["0773", "0786"]
+def gen_acc_pass(course, course_num):
+    stud_list =[]
+    for num in course_num:
+        url = "https://nfu.cycu.org/?semester=1111&amp;courseno=" + num + "&amp;column=True"
+        class_list = open(url).read().split("\n")[:-1]
+        stud_list += class_list
+        #print(stud_list)
+    for stud_num in stud_list:
+        password = password_generator(4, pass_string)
+        #print(password)
+        account = course + stud_num
+        #print(account)
+        print(stud_num + "\t" + account + "\t" + password)
+gen_acc_pass("cp", cp_num)
+gen_acc_pass("cad", cad_num)</pre>
+<p>create_users_txt.py:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">with open("2022_fall_ubuntu_account_pass.txt") as f:
+    data = f.readlines()
+# newusers format:  
+# pw_name:pw_passwd:pw_uid:pw_gid:pw_gecos:pw_dir:pw_shell
+# uid starts from 1002
+uid_starts = 1001
+users = ""
+send = ""
+ 
+for i in data:
+    #stud_num \t account \t password \n
+    stud = i.split("\t")
+    stud_num = stud[0]
+    account = stud[1]
+    password = stud[2].rstrip()
+    uid_starts += 1
+    uid = str(uid_starts)
+    gid = uid
+    gecos = account
+    home_dir = "/home/" + account
+    shell = "/bin/bash"
+    #print(stud_num, account, password)
+    users += account + ":" + password + ":" + uid + ":" + gid + ":" + gecos + ":" + home_dir + ":" + shell + "\n"
+    send += stud_num + ":" + account + ":" + password + "\n"
+ 
+with open("users.txt", "w", encoding="utf-8", newline='\n') as f:
+        f.write(users)
+ 
+with open("send.txt", "w", encoding="utf-8", newline='\n') as f:
+        f.write(send)</pre>
+<p>假如沒有採用 newline='\n', 在 Windows 寫檔案所使用的跳行符號, 以 sftp 傳到 Ubuntu 時將會因為 shell 並非 /bin/bash 而是加上 ^M$ 的錯誤 shell 資料, 導入用戶無法 login.</p>
+<p>若要修正跳行符號錯誤, 可以採用:</p>
+<p>change_shell.py</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">import os
+with open("users.txt", "r", encoding="UTF-8") as f:
+    data = f.read().splitlines()
+for i in data:
+    account = i.split(":")[0]
+    print(account)
+    os.system("sudo chsh -s /bin/bash " + account)</pre>
+<p>當執行上列程式時, 為避免在程式中列出管理者密碼, 可以編輯 /etc/sudoers 並加入:</p>
+<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false"># only require a password once every 60 minutes
+Defaults timestamp_timeout=60</pre>
+<p>可以讓 sudo python3 change_shell.py 執行時無需輸入管理者密碼.</p>
+<p>當伺服器運作期程結束, 可以在 /etc/sudoers 已經納入 timeout 設定後, 利用 python3 del_users.py 刪除對應的使用者與其用戶目錄.</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">import subprocess
+ 
+"""
+/etc/sudoers
+vi /etc/sudoers
+use w! to write the read only file
+add the following to sudoers
+ 
+# only require a password once every 60 minutes
+Defaults timestamp_timeout=60
+ 
+use 
+sudo python3 del_users.py
+to delete users and their home directories
+"""
+ 
+with open("users.txt", "r") as f:
+    data = f.read().splitlines()
+#print(data)
+stud_list = []
+for i in data:
+    stud_num = i.split(":")[0]
+    #print(stud_num)
+    stud_list.append(stud_num)    
+for user in stud_list:
+    try:
+        subprocess.run(["sudo", "userdel", "-r", user], check=True)
+        print(str(user) + " deleted!")
+        subprocess.run(["sudo", "rm", "-rf", f"/home/{user}"], check=True)
+        print(str(user) + " home deleted!")
+    except subprocess.CalledProcessesError:
+        print(str(user) + " is not deleted!")</pre>
+<p>其中的 users.txt 就是前面用來建立用戶帳號的設定檔案.</p><h1>Brython</h1>
 <p><a href="https://en.wikipedia.org/wiki/Python_(programming_language)">https://en.wikipedia.org/wiki/Python_(programming_language)</a></p>
 <h4>Examples:</h4>
 <p style="padding-left: 30px;"><a href="https://gist.github.com/mdecycu/d9082d678096bd58378d6afe2c7fa05d">https://gist.github.com/mdecycu/d9082d678096bd58378d6afe2c7fa05d</a></p>

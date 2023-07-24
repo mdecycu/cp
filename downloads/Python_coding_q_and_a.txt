@@ -1,0 +1,552 @@
+請利用 Python 寫程式解決問題:"小明第1天存款5元, 第2天存款10元 (為前1天的2倍),請讓使用者輸入任意存款天數,計算每一天存款金額與累計金額。"
+
+def calculate_savings(days):
+    daily_savings = []
+    total_savings = 0
+
+    for day in range(1, days + 1):
+        deposit = 5 * (2 ** (day - 1))
+        total_savings += deposit
+        daily_savings.append(deposit)
+
+    return daily_savings, total_savings
+
+def main():
+    try:
+        num_days = int(input("請輸入存款天數: "))
+        if num_days <= 0:
+            raise ValueError("請輸入大於0的正整數。")
+        
+        daily_savings, total_savings = calculate_savings(num_days)
+        
+        print("\n每一天的存款金額:")
+        for day, deposit in enumerate(daily_savings, start=1):
+            print(f"第{day}天: {deposit}元")
+
+        print("\n累計存款金額:", total_savings, "元")
+
+    except ValueError as e:
+        print("輸入錯誤:", e)
+
+if __name__ == "__main__":
+    main()
+
+題目為"由使用者分別輸入一梯形的上底、下底與高,求解其面積(取到小數點後第2位)。已知梯形面積計算為 (上底 + 下底) X 高 / 2", 請寫 Python 解這個問題.
+
+def calculate_trapezoid_area(upper_base, lower_base, height):
+    area = (upper_base + lower_base) * height / 2
+    return round(area, 2)
+
+def main():
+    try:
+        upper_base = float(input("請輸入梯形的上底長度: "))
+        lower_base = float(input("請輸入梯形的下底長度: "))
+        height = float(input("請輸入梯形的高: "))
+
+        if upper_base <= 0 or lower_base <= 0 or height <= 0:
+            raise ValueError("請輸入大於0的數字。")
+
+        area = calculate_trapezoid_area(upper_base, lower_base, height)
+        print("梯形的面積為:", area)
+
+    except ValueError as e:
+        print("輸入錯誤:", e)
+
+if __name__ == "__main__":
+    main()
+
+
+請用 PYthon 解"已知輸入任意秒數介於1~86400,求解可轉換為幾小時、幾分鐘、幾秒。請留意輸出最後結果不要再換行，若時、分、秒內容為０時不作任何輸出。"
+
+def convert_seconds_to_hms(seconds):
+    hours = seconds // 3600
+    minutes = (seconds % 3600) // 60
+    seconds = seconds % 60
+
+    return hours, minutes, seconds
+
+def main():
+    try:
+        total_seconds = int(input("請輸入秒數 (1~86400): "))
+
+        if total_seconds < 1 or total_seconds > 86400:
+            raise ValueError("請輸入介於1到86400之間的秒數。")
+
+        hours, minutes, seconds = convert_seconds_to_hms(total_seconds)
+
+        time_str = ""
+        if hours > 0:
+            time_str += f"{hours}小時"
+        if minutes > 0:
+            time_str += f"{minutes}分鐘"
+        if seconds > 0 or not time_str:
+            time_str += f"{seconds}秒"
+
+        print("轉換結果:", time_str)
+
+    except ValueError as e:
+        print("輸入錯誤:", e)
+
+if __name__ == "__main__":
+    main()
+
+
+請用 Python 解"已知輸入小於500元金額,求解用50元、10元、5元、1元之最少硬幣個數之等值組合。請留意若對應硬幣數量為零者不用輸出。"
+
+def minimum_coins(amount):
+    coins = [50, 10, 5, 1]
+    coin_counts = []
+
+    for coin in coins:
+        count = amount // coin
+        amount = amount % coin
+        if count > 0:
+            coin_counts.append((coin, count))
+
+    return coin_counts
+
+def main():
+    try:
+        amount = int(input("請輸入小於500元的金額: "))
+
+        if amount <= 0 or amount >= 500:
+            raise ValueError("請輸入介於1到499之間的金額。")
+
+        result = minimum_coins(amount)
+        print("等值組合:")
+
+        for coin, count in result:
+            print(f"{coin}元硬幣: {count}個")
+
+    except ValueError as e:
+        print("輸入錯誤:", e)
+
+if __name__ == "__main__":
+    main()
+
+
+用 Python 解"請輸入任意姓名, 然後會在姓名前面自動加上 Hello 問候語。"
+
+def add_hello_greeting(name):
+    return "Hello " + name
+
+def main():
+    try:
+        name = input("請輸入姓名: ")
+        greeting = add_hello_greeting(name)
+        print(greeting)
+
+    except Exception as e:
+        print("發生錯誤:", e)
+
+if __name__ == "__main__":
+    main()
+
+用 Python 解"已知一個袋子有 m 個1元, 若每次 3 元一數, 最後剩 2 元, 若每 5 元一數,最後剩 3 元,若每次 7 元一數, 最後剩 1 元, 請找出前 n 種可能解。"
+
+def find_possible_solutions(m, n):
+    solutions = []
+
+    for x in range(1, n + 1):
+        if (x - 2) % 3 == 0 and (x - 3) % 5 == 0 and (x - 1) % 7 == 0:
+            y1 = (x - 2) // 3
+            y2 = (x - 3) // 5
+            y3 = (x - 1) // 7
+            if y1 + y2 + y3 == m:
+                solutions.append((y1, y2, y3))
+
+    return solutions
+
+def main():
+    try:
+        m = int(input("請輸入袋子裡有幾個1元: "))
+        n = int(input("請輸入要找出前幾種可能解: "))
+
+        if m <= 0 or n <= 0:
+            raise ValueError("請輸入大於0的正整數。")
+
+        solutions = find_possible_solutions(m, n)
+
+        if len(solutions) == 0:
+            print("找不到符合條件的解。")
+        else:
+            print("前", len(solutions), "種可能解:")
+            for i, (y1, y2, y3) in enumerate(solutions, start=1):
+                print(f"解 {i}: 1元數量: {m}, 3元數量: {y1}, 5元數量: {y2}, 7元數量: {y3}")
+
+    except ValueError as e:
+        print("輸入錯誤:", e)
+
+if __name__ == "__main__":
+    main()
+
+
+用 Python 解"已知士兵人數大約在 m 人以下, 若每 3 個一數, 每 5 個一數, 每 7 個一數, 皆剩下2人, 則最接近 m 的人數有幾人?"
+
+def find_closest_soldiers(m):
+    x = 0
+
+    while True:
+        if x % 3 == 2 and x % 5 == 2 and x % 7 == 2:
+            return x
+
+        x += 1
+
+def main():
+    try:
+        m = int(input("請輸入士兵人數的上限 (大約值): "))
+
+        if m <= 0:
+            raise ValueError("請輸入大於0的正整數。")
+
+        closest_soldiers = find_closest_soldiers(m)
+        print("最接近", m, "的士兵人數為:", closest_soldiers)
+
+    except ValueError as e:
+        print("輸入錯誤:", e)
+
+if __name__ == "__main__":
+    main()
+
+用 Python 解"請撰寫一程式，讓使用者輸入3個數字，計算並輸出這3個數字的數值、加總、與平均數。
+提示 : 針對總和與平均輸出浮點數到小數點後第二位。"
+
+def calculate_sum_and_average(numbers):
+    total = sum(numbers)
+    average = total / len(numbers)
+    return total, average
+
+def main():
+    try:
+        numbers = []
+        for i in range(3):
+            num = float(input(f"請輸入第 {i+1} 個數字: "))
+            numbers.append(num)
+
+        total, average = calculate_sum_and_average(numbers)
+
+        print("\n輸入的數字為:", ", ".join(map(str, numbers)))
+        print("加總為:", round(total, 2))
+        print("平均數為:", round(average, 2))
+
+    except ValueError:
+        print("輸入錯誤：請確保輸入的是數字。")
+
+if __name__ == "__main__":
+    main()
+
+
+用 Python 解"已知時間 hh:mm:ss 表示特定時分秒24小時格式，請輸入兩組時間格式，自動計算秒差為何。注意: hh 介於 0 ~ 23 之間，mm 與 ss 介於 0 ~ 59 之間。"
+
+def time_to_seconds(time_str):
+    hh, mm, ss = map(int, time_str.split(":"))
+    return hh * 3600 + mm * 60 + ss
+
+def calculate_time_difference(time1_str, time2_str):
+    time1_seconds = time_to_seconds(time1_str)
+    time2_seconds = time_to_seconds(time2_str)
+
+    return abs(time1_seconds - time2_seconds)
+
+def main():
+    try:
+        time1_str = input("請輸入第一組時間 (hh:mm:ss): ")
+        time2_str = input("請輸入第二組時間 (hh:mm:ss): ")
+
+        time1_valid = all(0 <= int(t) <= 59 for t in time1_str.split(":"))
+        time2_valid = all(0 <= int(t) <= 59 for t in time2_str.split(":"))
+
+        if not time1_valid or not time2_valid:
+            raise ValueError("請確保 hh、mm、ss 均介於 0 到 59 之間。")
+
+        time_difference = calculate_time_difference(time1_str, time2_str)
+
+        print("\n兩組時間間隔為", time_difference, "秒。")
+
+    except ValueError as e:
+        print("輸入錯誤:", e)
+
+if __name__ == "__main__":
+    main()
+
+
+用 Python 解"依序輸入三個人的姓名, 然後在同一列上輸出上述三個人的姓名。注意：輸出格式中的逗號與空格需完全符合範例輸出要求。"
+
+def main():
+    try:
+        names = []
+        for i in range(3):
+            name = input(f"請輸入第 {i+1} 個人的姓名: ")
+            names.append(name)
+
+        output_str = ", ".join(names)
+        print(output_str)
+
+    except Exception as e:
+        print("發生錯誤:", e)
+
+if __name__ == "__main__":
+    main()
+
+
+用 Python 解"任意輸入2個小數後，首先在同一行分別輸出長度為10且靠右對齊且小數點取到第2位，然後再下一行一樣輸出長度為10但靠左對齊且小數點取到第2位。注意，請在數字輸出前先輸出一個12345678901234567890的尺規數字。"
+
+def main():
+    try:
+        num1 = float(input("請輸入第一個小數: "))
+        num2 = float(input("請輸入第二個小數: "))
+
+        # 右對齊輸出
+        print("12345678901234567890")
+        print(f"{num1:>10.2f}")
+        print(f"{num2:>10.2f}")
+
+        # 左對齊輸出
+        print("\n12345678901234567890")
+        print(f"{num1:<10.2f}")
+        print(f"{num2:<10.2f}")
+
+    except ValueError:
+        print("輸入錯誤：請確保輸入的是有效的小數。")
+
+if __name__ == "__main__":
+    main()
+
+
+Write a program to reverse an integer in Python.
+
+def reverse_integer(num):
+    if num >= 0:
+        reversed_num = int(str(num)[::-1])
+    else:
+        reversed_num = int(str(num)[:0:-1]) * -1
+    
+    return reversed_num
+
+def main():
+    try:
+        num = int(input("Enter an integer: "))
+        reversed_num = reverse_integer(num)
+        print("Reversed integer:", reversed_num)
+    except ValueError:
+        print("Invalid input. Please enter a valid integer.")
+
+if __name__ == "__main__":
+    main()
+
+Write a program in Python to check whether an integer is Armstrong number or not.
+
+def is_armstrong_number(num):
+    num_str = str(num)
+    num_digits = len(num_str)
+    sum_of_digits = sum(int(digit) ** num_digits for digit in num_str)
+    
+    return num == sum_of_digits
+
+def main():
+    try:
+        num = int(input("Enter an integer: "))
+        if is_armstrong_number(num):
+            print(num, "is an Armstrong number.")
+        else:
+            print(num, "is not an Armstrong number.")
+    except ValueError:
+        print("Invalid input. Please enter a valid integer.")
+
+if __name__ == "__main__":
+    main()
+
+
+Write a program in Python to check given number is prime or not.
+
+def is_prime(num):
+    if num <= 1:
+        return False
+    elif num == 2:
+        return True
+    elif num % 2 == 0:
+        return False
+    
+    for i in range(3, int(num**0.5) + 1, 2):
+        if num % i == 0:
+            return False
+
+    return True
+
+def main():
+    try:
+        num = int(input("Enter a number: "))
+        if is_prime(num):
+            print(num, "is a prime number.")
+        else:
+            print(num, "is not a prime number.")
+    except ValueError:
+        print("Invalid input. Please enter a valid integer.")
+
+if __name__ == "__main__":
+    main()
+
+
+Write a program in Python to print the Fibonacci series using iterative method.
+
+def fibonacci_iterative(n):
+    fib_series = [0, 1]
+
+    for i in range(2, n):
+        next_fib = fib_series[-1] + fib_series[-2]
+        fib_series.append(next_fib)
+
+    return fib_series
+
+def main():
+    try:
+        n = int(input("Enter the number of terms in Fibonacci series: "))
+        
+        if n <= 0:
+            raise ValueError("Please enter a positive integer.")
+        
+        fib_series = fibonacci_iterative(n)
+        print("Fibonacci series:")
+        print(fib_series)
+
+    except ValueError as e:
+        print("Invalid input:", e)
+
+if __name__ == "__main__":
+    main()
+
+
+Write a program in Python to print the Fibonacci series using recursive method.
+
+def fibonacci_recursive(n):
+    if n <= 0:
+        return []
+    elif n == 1:
+        return [0]
+    elif n == 2:
+        return [0, 1]
+    else:
+        fib_series = fibonacci_recursive(n - 1)
+        next_fib = fib_series[-1] + fib_series[-2]
+        fib_series.append(next_fib)
+        return fib_series
+
+def main():
+    try:
+        n = int(input("Enter the number of terms in Fibonacci series: "))
+        
+        if n <= 0:
+            raise ValueError("Please enter a positive integer.")
+        
+        fib_series = fibonacci_recursive(n)
+        print("Fibonacci series:")
+        print(fib_series)
+
+    except ValueError as e:
+        print("Invalid input:", e)
+
+if __name__ == "__main__":
+    main()
+
+
+Write a program in Python to check whether a number is palindrome or not using iterative method.
+
+def is_palindrome_iterative(num):
+    num_str = str(num)
+    left, right = 0, len(num_str) - 1
+
+    while left < right:
+        if num_str[left] != num_str[right]:
+            return False
+        left += 1
+        right -= 1
+
+    return True
+
+def main():
+    try:
+        num = int(input("Enter a number: "))
+        if is_palindrome_iterative(num):
+            print(num, "is a palindrome.")
+        else:
+            print(num, "is not a palindrome.")
+    except ValueError:
+        print("Invalid input. Please enter a valid integer.")
+
+if __name__ == "__main__":
+    main()
+
+
+Write a program in Python to check whether a number is palindrome or not using recursive method.
+
+def is_palindrome_recursive(num_str):
+    if len(num_str) <= 1:
+        return True
+    elif num_str[0] != num_str[-1]:
+        return False
+    else:
+        return is_palindrome_recursive(num_str[1:-1])
+
+def main():
+    try:
+        num = int(input("Enter a number: "))
+        num_str = str(num)
+        if is_palindrome_recursive(num_str):
+            print(num, "is a palindrome.")
+        else:
+            print(num, "is not a palindrome.")
+    except ValueError:
+        print("Invalid input. Please enter a valid integer.")
+
+if __name__ == "__main__":
+    main()
+
+Write a program in Python to find greatest among three integers.
+
+def find_greatest(num1, num2, num3):
+    if num1 >= num2 and num1 >= num3:
+        return num1
+    elif num2 >= num1 and num2 >= num3:
+        return num2
+    else:
+        return num3
+
+def main():
+    try:
+        num1 = int(input("Enter the first integer: "))
+        num2 = int(input("Enter the second integer: "))
+        num3 = int(input("Enter the third integer: "))
+
+        greatest = find_greatest(num1, num2, num3)
+        print("The greatest among the three integers is:", greatest)
+
+    except ValueError:
+        print("Invalid input. Please enter valid integers.")
+
+if __name__ == "__main__":
+    main()
+
+
+Write a program in Python to check if a number is binary?
+
+def is_binary_number(num_str):
+    for digit in num_str:
+        if digit not in ['0', '1']:
+            return False
+    return True
+
+def main():
+    try:
+        num_str = input("Enter a number: ")
+        if is_binary_number(num_str):
+            print(num_str, "is a binary number.")
+        else:
+            print(num_str, "is not a binary number.")
+    except ValueError:
+        print("Invalid input. Please enter a valid number.")
+
+if __name__ == "__main__":
+    main()
+
+
+https://quescol.com/interview-preparation/python-coding-question

@@ -2,7 +2,7 @@
         <head>
         <title>cp</title>
         <meta charset="utf-8">
-<meta property="head" content="H1">
+<meta property="head" content="H2">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700,900" rel="stylesheet">
         <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/icomoon/style.css">
@@ -142,51 +142,25 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">Haskell << <a href='Haskell.html'>Previous</a> <a href='Networks.html'>Next</a> >> Networks<br /><h1>RoboDK</h1>
-<p><a href="https://link.springer.com/book/10.1007/978-3-031-06469-2">2023 Robotics, Vision and Control</a></p>
-<p><a href="https://github.com/gpjt/webgl-lessons">https://github.com/gpjt/webgl-lessons</a></p>
-<p><a href="https://github.com/petercorke/RVC3-python">https://github.com/petercorke/RVC3-python</a></p>
-<p><a href="https://github.com/mdecycu/WebGL-Robot">https://github.com/mdecycu/WebGL-Robot</a>  (compared with <a href="./../downloads/pick_and_place_robodk_web.txt">pick_and_place_robodk_web.txt</a></p>
-<p style="padding-left: 30px;"><a href="https://github.com/toji/gl-matrix">https://github.com/toji/gl-matrix</a></p>
-<p style="padding-left: 30px;"><a href="https://github.com/AlmondFlour/WebGL-Robot/blob/master/webgl-utils.js">https://github.com/AlmondFlour/WebGL-Robot/blob/master/webgl-utils.js</a></p>
-<p><a href="./../downloads/cube_webgl_show_html.7z">cube_webgl_show_html.7z</a></p>
-<p><a href="./../downloads/cube_webgl_rotate_html.7z">cube_webgl_rotate_html.7z</a></p>
-<p><a href="./../downloads/cube_webgl_rotate_zoom_html.7z">cube_webgl_rotate_zoom_html.7z</a></p>
-<p><a href="https://robodk.com/downloads/Install-RoboDK-64-v5.6.2.exe">Download 5.6.2</a> (5.4.0 之後 Python API 的用法已經大幅更動)</p>
-<p><a href="https://robodk.com/downloads-v/Install-RoboDK-64-v5.2.2.exe">Download 5.2.2</a></p>
-<p>使用 RoboDK 5.2.2</p>
-<p>robolink - Python API for RoboDK</p>
-<p>robodk.py - Matrix class for robotics</p>
-<p><a href="https://docs.python.org/3.9/library/collections.abc.html#module-collections.abc">https://docs.python.org/3.9/library/collections.abc.html#module-collections.abc</a></p>
-<p>robodk522_portable\examples\ABB-IRB-4600-20-2.50_draw 中的 svg.py 與 path.py 使用 Python 3.11.4 執行必須因應修改:</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># for Python &lt; 3.9
-# from collections import MutableSequence
-# for Python &gt;= 3.9
-from collections.abc import MutableSequence</pre>
-<p>Before 5.4.0<br/><br/>Most of our examples used the import method below:</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from robolink import *
-from robodk import *
-RDK = Robolink()
-pose = eye()
-ITEM_TYPE_ROBOT</pre>
-<p>After 5.4.0<br/><br/>You can use any of the following import methods:</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from robodk import robolink, robomath
-RDK = robolink.Robolink()
-pose = robomath.eye()
-robolink.ITEM_TYPE_ROBOT</pre>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from robodk.robolink import Robolink, ITEM_TYPE_ROBOT
-from robodk.robomath import eye
-RDK = Robolink()
-pose = eye()
-ITEM_TYPE_ROBOT</pre>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from robodk.robolink import *
-from robodk.robomath import *
-RDK = Robolink()
-pose = eye()
-ITEM_TYPE_ROBOT</pre>
-<p>The robodk package is the distributed entry point of the Python API. It is the common parent of all sub-packages and modules that constitute the Python API.<br/><br/>Overview of the RoboDK API:<br/><br/>        <a href="https://robodk.com/doc/en/RoboDK-API.html">https://robodk.com/doc/en/RoboDK-API.html</a></p>
+    <div id="tipue_search_content">計算機程式 << <a href='計算機程式.html'>Previous</a> <a href='RoboDK.html'>Next</a> >> RoboDK<br /><h1>Haskell</h1>
+<p><a href="https://youtu.be/bB4fmQiUYPw">Install Haskell on Windows</a></p>
+<p>Bring up the powershell not necessary as administrator</p>
+<p>setup proxy for powershell</p>
+<p><code>netsh winhttp set proxy "192.168.0.14:3128"</code></p>
+<p><code>netsh winhttp set proxy "[2001:288:6004:17::4]:3128"</code></p>
+<p><code>execute the following command to install ghcup, ghc, msys2, cabal, stack and hls</code></p>
+<pre class="brush:ps;auto-links:false;toolbar:false" contenteditable="false">Set-ExecutionPolicy Bypass -Scope Process -Force;[System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; try { Invoke-Command -ScriptBlock ([ScriptBlock]::Create((Invoke-WebRequest https://www.haskell.org/ghcup/sh/bootstrap-haskell.ps1 -UseBasicParsing))) -ArgumentList $true } catch { Write-Error $_ }</pre>
+<p>Welcome to Haskell!<br/><br/>This script can download and install the following programs:<br/>  * ghcup - The Haskell toolchain installer<br/>  * ghc   - The Glasgow Haskell Compiler<br/>  * msys2 - A linux-style toolchain environment required for many operations<br/>  * cabal - The Cabal build tool for managing Haskell software<br/>  * stack - (optional) A cross-platform program for developing Haskell projects<br/>  * hls   - (optional) A language server for developers to integrate with their editor/IDE<br/><br/>Please note that ANTIVIRUS may interfere with the installation. If you experience problems, consider<br/>disabling it temporarily.<br/><br/>Where to install to (this should be a short Path, preferably a Drive like 'C:\')?<br/>If you accept this path, binaries will be installed into 'C:\ghcup\bin' and msys2 into 'C:\ghcup\msys64'.<br/>Press enter to accept the default [C:\]:</p>
+<p><br/>Setting env variable GHCUP_INSTALL_BASE_PREFIX to 'C:\'<br/>Preparing for GHCup installation...<br/>Specify Cabal directory (this is where haskell packages end up)<br/>Press enter to accept the default [C:\\cabal]:</p>
 <p></p>
-<p>參考資料: <a href="https://robodk.com/doc/en/PythonAPI/robodk.html">https://robodk.com/doc/en/PythonAPI/robodk.html</a></p><br />Haskell << <a href='Haskell.html'>Previous</a> <a href='Networks.html'>Next</a> >> Networks</div>
+<p>In a new powershell or cmd.exe session, now you can...<br/><br/>Start a simple repl via:<br/>  ghci<br/><br/>Start a new haskell project in the current directory via:<br/>  cabal init --interactive<br/><br/>Install other GHC versions and tools via:<br/>  ghcup list<br/>  ghcup install &lt;tool&gt; &lt;version&gt;<br/><br/>To install system libraries and update msys2/mingw64,<br/>open the "Mingw haskell shell"<br/>and the "Mingw package management docs"<br/>desktop shortcuts.<br/><br/>If you are new to Haskell, check out <a href="https://www.haskell.org/ghcup/steps/">https://www.haskell.org/ghcup/steps/</a></p>
+<p>path add the "ghcup\bin"</p>
+<p>ghc --version</p>
+<p><a href="https://www.haskell.org/ghcup/steps/">https://www.haskell.org/ghcup/steps/</a> </p>
+<p><a href="https://github.com/lambdacms/lambdacms">https://github.com/lambdacms/lambdacms</a> </p>
+<p><a href="https://github.com/NorfairKing/smos">https://github.com/NorfairKing/smos</a> </p>
+<p><a href="https://github.com/garybgenett/composer">https://github.com/garybgenett/composer</a> </p>
+<p><a href="https://github.com/uhub/awesome-haskell">https://github.com/uhub/awesome-haskell</a> </p><br />計算機程式 << <a href='計算機程式.html'>Previous</a> <a href='RoboDK.html'>Next</a> >> RoboDK</div>
         
     <!-- footer -->
       <div class="container">

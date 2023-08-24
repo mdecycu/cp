@@ -106,7 +106,13 @@ for i in py_list:
 <p>取得 get-pip.py 後, 以可攜 Python.exe 執行後, 就能在可攜套件中配置 pip.exe</p>
 <p>Javascript:</p>
 <p style="padding-left: 30px;"><a href="https://learnjavascript.online/">https://learnjavascript.online/</a> (Use the first free 7 chapters)</p>
-<p style="padding-left: 30px;"><a href="https://www.freecodecamp.org/news/23-free-websites-to-learn-javascript/">https://www.freecodecamp.org/news/23-free-websites-to-learn-javascript/</a></p><h2>計算機程式</h2>
+<p style="padding-left: 30px;"><a href="https://www.freecodecamp.org/news/23-free-websites-to-learn-javascript/">https://www.freecodecamp.org/news/23-free-websites-to-learn-javascript/</a></p><h2>2FA</h2>
+<p>Two-Factor Authentication</p>
+<p>iphone and apple watch: <a href="https://authy.com/guides/apple/">Twilio Authy</a></p>
+<p><a href="https://en.wikipedia.org/wiki/Time-based_one-time_password">https://en.wikipedia.org/wiki/Time-based_one-time_password</a> </p>
+<p style="padding-left: 30px;">RFC 6238: <a href="https://datatracker.ietf.org/doc/html/rfc6238">https://datatracker.ietf.org/doc/html/rfc6238</a> </p>
+<p><a href="https://en.wikipedia.org/wiki/HMAC-based_one-time_password">https://en.wikipedia.org/wiki/HMAC-based_one-time_password</a> </p>
+<p style="padding-left: 30px;">RFC 4226: <a href="https://datatracker.ietf.org/doc/html/rfc4226">https://datatracker.ietf.org/doc/html/rfc4226</a> </p><h2>計算機程式</h2>
 <p><a href="https://en.wikipedia.org/wiki/Declarative_programming">https://en.wikipedia.org/wiki/Declarative_programming</a> (宣告式程式設計)</p>
 <p>and</p>
 <p><a href="https://en.wikipedia.org/wiki/Imperative_programming">https://en.wikipedia.org/wiki/Imperative_programming</a> (指令式程式設計)</p>
@@ -147,8 +153,7 @@ for i in py_list:
 <p>5. 軟體工程：介紹軟體開發的基本流程和方法，包括需求分析、設計、編碼、測試和維護等，培養學生的團隊合作和專案管理能力。</p>
 <p>6. 資料庫：學習資料庫的基本概念和操作，包括資料庫設計、SQL查詢語言、資料庫管理系統等。</p>
 <p>7. 網路和網頁開發：介紹網路的基本原理和協議，以及網頁開發的相關技術，如HTML、CSS、JavaScript等。</p>
-<p>8. 軟體安全：學習軟體安全的基本概念和方法，包括身份驗證、加密、防火牆等，培養學生的資訊安全意識和技能。</p>
-<h2>Haskell</h2>
+<p>8. 軟體安全：學習軟體安全的基本概念和方法，包括身份驗證、加密、防火牆等，培養學生的資訊安全意識和技能。</p><h2>Haskell</h2>
 <p><a href="https://youtu.be/bB4fmQiUYPw">Install Haskell on Windows</a></p>
 <p>Bring up the powershell not necessary as administrator</p>
 <p>setup proxy for powershell</p>
@@ -503,11 +508,12 @@ for user in stud_list:
 <p style="padding-left: 90px;">Rasperry Pi</p>
 <p style="padding-left: 90px;">Webcam</p>
 <p>2. 工程師的計算機程式能力</p>
+<p style="padding-left: 30px;">從 github classroom 取得個人課程倉儲</p>
+<p style="padding-left: 60px;">以 <a href="https://github.com/mdecycu/cmsite">https://github.com/mdecycu/cmsite</a> 作為個人作業起始 template</p>
 <p>3. 解決問題</p>
 <p>4. 開發一個工具</p>
 <p>5. 課程總結</p>
-<p style="padding-left: 30px;">錄製一段簡報影片</p>
-<h2>計算機程式能力</h2>
+<p style="padding-left: 30px;">錄製一段簡報影片</p><h2>計算機程式能力</h2>
 <p>ChatGPT 認為"機械設計工程師必須具備的計算機程式能力":</p>
 <p>機械設計工程師在現代工程領域中，計算機程式的能力已變得相當關鍵。這些能力可以幫助工程師更有效地進行設計、分析、模擬和最佳化工作。</p>
 <p>以下是機械設計工程師需要具備的計算機程式能力：</p>
@@ -576,15 +582,34 @@ quotient = a / b
 is_greater = a &gt; b
 is_equal = a == b
 </pre>
-<p><br/>### 條件語句（if、else）</p>
+<h4><br/>條件語句（if、else）</h4>
 <p>條件語句用於根據條件的真假執行不同的程式碼。</p>
-<p>```python<br/>temperature = 28</p>
-<p>if temperature &gt; 30:<br/> print("It's a hot day!")<br/>elif temperature &gt; 20:<br/> print("It's a pleasant day.")<br/>else:<br/> print("It's a bit chilly.")<br/>```</p>
-<p>### 迴圈（for、while）</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">#python
+temperature = 28
+
+if temperature &gt; 30:
+print("It's a hot day!")
+elif temperature &gt; 20:
+print("It's a pleasant day.")
+else:
+print("It's a bit chilly.")
+</pre>
+<p></p>
+<h4>迴圈（for、while）</h4>
 <p>迴圈用於重複執行一段程式碼，直到特定條件不滿足為止。</p>
-<p>```python<br/># for 迴圈<br/>for i in range(5):<br/> print(i)</p>
-<p># while 迴圈<br/>counter = 0<br/>while counter &lt; 3:<br/> print("Counter:", counter)<br/> counter += 1<br/>```</p>
-<p>這些是 Python 基本語法和語法結構的一些示例。逐行註解說明表明了每行程式碼的作用和功能。理解這些基本概念將幫助你建立穩固的 Python 基礎，為進一步的學習和應用鋪平道路。</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">#python
+# for 迴圈
+for i in range(5):
+print(i)
+
+# while 迴圈
+counter = 0
+while counter &lt; 3:
+print("Counter:", counter)
+counter += 1
+</pre>
+<p></p>
+<p>這些是 Python 基本語法和語法結構的一些示例。逐行註解說明表明了每行程式碼的作用和功能。理解這些基本概念將幫助你建立穩固的 Python 基礎，為進一步的學習和應用鋪路。</p>
 <p></p><h1>mind-map</h1>
 <p>研究 <a href="https://github.com/wanglin2/mind-map">https://github.com/wanglin2/mind-map</a> </p>
 <p>Vue and Javascript </p>
